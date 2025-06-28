@@ -5,10 +5,18 @@ interface IDescriptionText {
 }
 
 
+const TextToPrint = ({data}: Readonly<{data: string}>) => {
+    return (
+        <div>
+            <p>{data}</p>
+        </div>
+    )
+}
+
 const DescriptionText = ({data, className}: Readonly<IDescriptionText>) => {
     return (
         <div className={`text-justify ${className}`}>
-            <p>{data}</p>
+            <TextToPrint data={data} />
         </div>
     )
 }
